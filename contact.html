@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Form</title>
+    <link rel="stylesheet" href="style.css"> <!-- Link to the external CSS file -->
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #ffb700;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .contact-section {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            justify-content: center;
+        }
+
+        /* Left Form Section */
+        .form-container {
+            flex: 1;
+            min-width: 400px;
+            max-width: 500px;
+            background-color: #001033;
+            color: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Contact Us Heading in Yellow */
+        .form-container h2 {
+            margin-bottom: 25px;
+            font-size: 24px;
+            text-align: center;
+            color: #ffb700; /* Yellow color */
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 95%;
+            padding: 12px 15px;
+            border: none;
+            border-radius: 6px;
+            font-size: 15px;
+            background-color: rgba(255, 255, 255, 0.9);
+        }
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            font-size: 15px;
+            color: #555;
+}
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: 2px solid #ffb700;
+        }
+
+        .form-group input:required,
+        .form-group textarea:required {
+            border-left: 4px solid #ffb700;
+        }
+
+        .name-fields {
+            display: flex;
+            gap: 15px;
+        }
+
+        .name-fields .form-group {
+            flex: 1;
+        }
+
+        button[type="submit"] {
+            width: 100%;
+            padding: 14px;
+            background-color: #ffb700; /* Yellow color */
+            color: #001033;
+            border: none;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s;
+            margin-top: 10px;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #ffcc40;
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <a href="#body">
+            <img src="img/logo-transparent.png" alt="logo" />
+        </a>
+        <ul id="h-tags">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#aboutus">About Us</a></li>
+            <li><a href="index.html#services">Services</a></li>
+            <li><a href="index.html#packages">Packages</a></li>
+            <li><a href="index.html#contact.html">Contact Us</a></li>
+        </ul>
+    </header>
+
+    <div class="container">
+        <!-- Form for inserting a new contact -->
+        <form id="contactForm" action="insert.php" method="post">
+            <h2 style="color: #ffb700; text-align: center;">Contact Us</h2> 
+            <div class="form-group">
+                <label for="first-name">First Name *</label>
+                <input type="text" id="first-name" name="first_name" placeholder="First name" required>
+            </div>
+            <div class="form-group">
+                <label for="last-name">Last Name</label>
+                <input type="text" id="last-name" name="last_name" placeholder="Last name">
+            </div>
+            <div class="form-group">
+                <label for="email">Email *</label>
+                <input type="email" id="email" name="email" placeholder="Your email" required>
+            </div>
+            <div class="form-group">
+                <label for="mobile">Mobile # *</label>
+                <input type="tel" id="mobile" name="phone_number" placeholder="Mobile number" required>
+            </div>
+            <div class="form-group">
+                <label for="comments">Comments</label>
+                <textarea id="comments" name="comment" placeholder="Your message..." rows="4"></textarea>
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+</html>

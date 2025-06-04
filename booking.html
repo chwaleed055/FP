@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Event Booking Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f8f8f8;
+    }
+    .container {
+      max-width: 600px;
+      background: #fff;
+      padding: 20px;
+      margin: 50px auto;
+      border-radius: 10px;
+      box-shadow: 0 0 10px #ccc;
+    }
+    input, select, button {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    button {
+      background-color: #ffb700;
+      color: white;
+      border: none;
+    }
+    h2 {
+      text-align: center;
+      color: #ffb700;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <form action="booking.php" method="POST">
+    <h2>Book Your Event</h2>
+
+    <input type="text" name="name" placeholder="Full Name" required>
+    <input type="email" name="email" placeholder="Email Address" required>
+    <input type="text" name="phone" placeholder="Phone Number" required>
+
+    <label for="event_type">Event Type</label>
+    <select name="event_type" required>
+      <option value="">-- Select Event --</option>
+      <option value="1">Wedding</option>
+      <option value="2">Birthday</option>
+      <option value="3">Corporate</option>
+    </select>
+
+    <label for="venue">Venue</label>
+    <select name="venue" required>
+      <option value="">-- Select Venue --</option>
+      <option value="1">Grand Palace</option>
+      <option value="2">Sunset Garden</option>
+      <option value="3">Kids World</option>
+      <option value="4">Business Lounge</option>
+    </select>
+
+    <label for="package">Package</label>
+    <select name="package" required>
+      <option value="">-- Select Package --</option>
+      <option value="1">Basic</option>
+      <option value="2">Standard</option>
+      <option value="3">Premium</option>
+    </select>
+
+    <label for="event_date">Event Date</label>
+    <input type="date" name="event_date" required min="<?php echo date('Y-m-d'); ?>">
+
+    <button type="submit">Submit Book
